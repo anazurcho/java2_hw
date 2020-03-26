@@ -7,10 +7,27 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+  <style>
+    .btn{
+      background: #43A047;
+      width: 100%;
+      border:0;
+      padding: 15px;
+      color: #FFFFFF;
+        font-size: 14px;
+        text-align: center;
+        box-shadow: 0 0 20px 0;
+    }
+    h2{
+      text-align:center;
+      color: teal;
+    }
+  </style>
   <head>
     <title>$Title$</title>
   </head>
   <body>
-     <h2 style="text-align:center">შინაური ცხოველების სარეგისტრაციო ფორმა</h2>
+     <h2>შინაური ცხოველების სარეგისტრაციო ფორმა</h2>
+     <div class="btn">/petservlet</div>
   </body>
 </html>

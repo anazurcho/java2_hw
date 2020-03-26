@@ -17,7 +17,22 @@
         padding: 15px;
         box-sizing: border-box;
         font-size: 14px;
-
+    }
+    .box{
+        position: relative;
+        background: #FFFFFF;
+        max-width: 360px;
+        margin: 10px auto 100px;
+        padding: 45px;
+        text-align: center;
+        box-shadow: 0 0 20px 0;
+    }
+    .btn{
+        background: #43A047;
+        width: 100%;
+        border:0;
+        padding: 15px;
+        color: #FFFFFF;
     }
 </style>
     <head>
@@ -26,8 +41,7 @@
     <body>
         <div class="container">
             <form action="petservlet" method="post">
-                <div style=" position: relative;  background: #FFFFFF;  max-width: 360px;
-                margin: 10px auto 100px;  padding: 45px;  text-align: center;  box-shadow: 0 0 20px 0;">
+                <div class="box">
                     <h4 style="text-align:center">შინაური ცხოველების სარეგისტრაციო ფორმა</h4>
                         <div style="width: 100%">
 
@@ -35,8 +49,7 @@
                             <input type="text" name="variety" placeholder="ჯიში">
                             <input type="text" name="gender" placeholder="სქესი" >
                             <input type="text" name="age" placeholder="ასაკი" >
-                        <input type="submit" value="რეგისტრაცია" style="background: #43A047;width: 100%;
-                            border:0;padding: 15px;color: #FFFFFF;"/>
+                        <input type="submit" value="რეგისტრაცია" class="btn"/>
                     </div>
                 </div>
             </form>
