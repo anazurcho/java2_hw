@@ -4,10 +4,12 @@ public class Pet {
     private String name;
     private String variety;
     private String gender;
-    private Integer age;
+    private int age;
 
+    public Pet(){
 
-    public Pet(String name, String variety, String gender, Integer age) {
+    }
+    public Pet(String name, String variety, String gender, int age) {
         this.name = name;
         this.variety = variety;
         this.gender = gender;
@@ -38,10 +40,10 @@ public class Pet {
         this.gender = gender;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
 }

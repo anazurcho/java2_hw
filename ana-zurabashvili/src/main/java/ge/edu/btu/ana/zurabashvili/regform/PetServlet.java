@@ -1,4 +1,5 @@
 package ge.edu.btu.ana.zurabashvili.regform;
+import ge.edu.btu.ana.zurabashvili.regform.model.Pet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,10 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/userservlet")
-public class userservlet extends HttpServlet{
-    public static final String VIEW = "/showUser.jsp";
-    Pet pet=new Pet();
+@WebServlet("/petservlet")
+public class PetServlet  extends HttpServlet {
+    public static final String VIEW = "/addPet.jsp";
+    Pet pet= new Pet();
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -27,13 +29,12 @@ public class userservlet extends HttpServlet{
         pet.setName(req.getParameter("name"));
         pet.setVariety(req.getParameter("variety"));
         pet.setGender(req.getParameter("gender"));
-        pet.setAge(req.getParameter("age"));
+        pet.setAge(Integer.parseInt(req.getParameter("age")));
 
         System.out.println(pet.getName());
-        System.out.println(pet.getSurname());
-        System.out.println(pet.setGender());
-        System.out.println(pet.setAge());
+        System.out.println(pet.getVariety());
+        System.out.println(pet.getGender());
+        System.out.println(pet.getAge());
+
     }
-
-
 }
