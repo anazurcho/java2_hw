@@ -5,8 +5,8 @@ public class Currency {
     public String title;
     public double buy;
     public double sell;
-//    public String to;
-//    public int amount;
+    public String to;
+    public int amount;
 //    public double result;
 
     public Currency() {
@@ -38,21 +38,21 @@ public class Currency {
         this.title = title;
     }
 
-//    public String getTo() {
-//        return to;
-//    }
-//
-//    public void setTo(String to) {
-//        this.to = to;
-//    }
-//
-//    public int getAmount() {
-//        return amount;
-//    }
-//
-//    public void setAmount(int amount) {
-//        this.amount = amount;
-//    }
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 
     public double getBuy() {
         return buy;

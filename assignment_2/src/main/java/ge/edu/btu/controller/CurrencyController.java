@@ -2,7 +2,7 @@ package ge.edu.btu.controller;
 
 import ge.edu.btu.model.Currency;
 import ge.edu.btu.model.Currencydata;
-
+import jdk.nashorn.api.scripting.NashornScriptEngineFactory;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
@@ -12,75 +12,50 @@ import java.util.List;
 @Path("/currencyManager")
 public class CurrencyController {
 
-    @GET
-    @Path("/Currency")
-    @Produces(MediaType.APPLICATION_JSON)
-    public ArrayList<Currency> getStudents(){
-        return Currencydata.getInstance();
-    }
-
-    @POST
-    @Path("/Currency")
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void addCurrency(Currency currency){
-        ArrayList<Currency> currencies=Currencydata.getInstance();
-        currencies.add(currency);
-        System.out.println(currency.toString());
-    }
-    @POST
-    @Path("/buy")
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void buyCurrency(Currency currency){
-        ArrayList<Currency> currencies=Currencydata.getInstance();
-        currencies.add(currency);
-        System.out.println(currency.geltoOther());
-    }
-
-
-//    @PUT
-//    @Path("/{id}")
+//    @GET
+//    @Path("/Currency")
 //    @Produces(MediaType.APPLICATION_JSON)
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    public void updateCurrency(@PathParam("id") int id,  Currency currency){
-//        ArrayList<Currency> currencies=Currencydata.getInstance();
-//        for (int i=0; i<currencies.size(); i++ ){
-//            if (currencies.get(i).getId() == id){
-//                currencies.get(i).setTitle(currency.getTitle());
-//                currencies.get(i).setBuy(currency.getBuy());
-//                currencies.get(i).setSell(currency.getSell());
-//                currencies.get(i).setId(currency.getId());
-//            }
-//        }
+//    public ArrayList<Currency> getCurrency(){
+//        return Currencydata.getInstance();
 //    }
 
     @GET
-    @Path("/getCurrency/{id}")
+    @Path("/Currency")
     @Produces(MediaType.APPLICATION_JSON)
-    public Currency getCurrency(@PathParam("id") int id) {
-        System.out.println(id);
-        return new Currency(id,"Gel",25,23);
+    public List<Currency> getCurrency() {
+        List<Currency> currencyList = new ArrayList<>();
+        currencyList.add(new Currency(1,"USD", 3.16, 3.2));
+        currencyList.add(new Currency(2,"EUR", 3.425, 3.475));
+        currencyList.add(new Currency(4,"RUB", 4.12, 4.3));
+        currencyList.add(new Currency(6,"AZN", 1.6, 1.84));
+        return currencyList;
     }
-    @PUT
-    @Path("/sell")
+//
+
+    @GET
+    @Path("/buy")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Currency updateCurrency(Currency currency) {
-        System.out.println(currency.geltoOther());
-        return currency;
-    }
-    public void sellCurrency(string to, int amount,  Currency currency){
+    public void buyCurrency(Currency currency){
         ArrayList<Currency> currencies=Currencydata.getInstance();
         for (int i=0; i<currencies.size(); i++ ){
-            if (currencies.get(i).getTo() == to){
-                currencies.get(i).setTitle(currency.getBuy()*);
-                currencies.get(i).setBuy(currency.getBuy());
-                currencies.get(i).setSell(currency.getSell());
-                currencies.get(i).setId(currency.getId());
+            if (currencies.get(i).getTitle() == request.getParameter("to")) {
+                return request.getParameter("amount") / currencies.get(i).getBuy();
             }
         }
     }
 
+    @GET
+    @Path("/sell")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public void sellCurrency(Currency currency){
+        ArrayList<Currency> currencies=Currencydata.getInstance();
+        for (int i=0; i<currencies.size(); i++ ){
+            if (currencies.get(i).getTitle() == request.getParameter("to")) {
+                return request.getParameter("amount") * currencies.get(i).getSell();
+            }
+        }
+    }
 }
 
