@@ -10,7 +10,7 @@ import java.util.List;
 @WebService
 public class CovidService {
 
-    List<Covid> covidList=new ArrayList<Covid>(Arrays.asList(
+    List<Covid> covidCountryStatistic=new ArrayList<Covid>(Arrays.asList(
         new Covid("USA",819321,45356,83008),
         new Covid("Spain",208389,21717,85915),
         new Covid("Italy",183957,24648,39181),
@@ -22,15 +22,13 @@ public class CovidService {
 
     @WebMethod
     public List<Covid> getStatistic(){
-        return covidList;
+        return covidCountryStatistic;
     }
 
     @WebMethod
     public Covid getCountryStatistic(String country){
-        for (Covid cov: covidList){
-            if(cov.getCountry().equals(country)){
-                return cov;
-            }
+        for (Covid cov: covidCountryStatistic){
+            if(cov.getCountry().equals(country)){ return cov; }
         }
         return null;
     }
@@ -38,27 +36,21 @@ public class CovidService {
     @WebMethod
     public int TotalConfirmed(){
         int result = 0;
-        for (Covid cov: covidList){
-            result += cov.getConfirmed();
-            }
+        for (Covid cov: covidCountryStatistic){result += cov.getConfirmed();}
         return result;
     }
 
     @WebMethod
     public int TotalDeathget(){
         int result = 0;
-        for (Covid cov: covidList){
-            result += cov.getDeath();
-        }
+        for (Covid cov: covidCountryStatistic){result += cov.getDeath(); }
         return result;
     }
 
     @WebMethod
     public int TotalRecoveryget(){
         int result = 0;
-        for (Covid cov: covidList){
-            result += cov.getRecovered();
-        }
+        for (Covid cov: covidCountryStatistic){result += cov.getRecovered(); }
         return result;
     }
 

@@ -8,7 +8,7 @@ public class Covid {
     int death;
     int recovered;
 
-    public Covid() { }
+    public Covid() {}
 
     public Covid(String country, int confirmed, int death, int recovered) {
         this.country = country;
