@@ -1,4 +1,4 @@
-package ge.edu.btu.demo.model;
+package ana.zurabashvili.covidpackage.model;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement

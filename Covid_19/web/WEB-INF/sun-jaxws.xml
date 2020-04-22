@@ -4,6 +4,6 @@
         version="2.0">
     <endpoint
             name="StudentWs"
-            implementation="ge.edu.btu.demo.services.CovidService"
+            implementation="ana.zurabashvili.covidpackage.services.CovidService"
             url-pattern="/covid"/>
 </endpoints>

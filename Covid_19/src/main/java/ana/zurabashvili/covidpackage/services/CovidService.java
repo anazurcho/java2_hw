@@ -1,6 +1,6 @@
-package ge.edu.btu.demo.services;
+package ana.zurabashvili.covidpackage.services;
 
-import ge.edu.btu.demo.model.Covid;
+import ana.zurabashvili.covidpackage.model.Covid;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.ArrayList;
