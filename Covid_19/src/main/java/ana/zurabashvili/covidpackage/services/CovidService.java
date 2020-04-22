@@ -27,8 +27,8 @@ public class CovidService {
 
     @WebMethod
     public Covid getCountryStatistic(String country){
-        for (Covid cov: covidCountryStatistic){
-            if(cov.getCountry().equals(country)){ return cov; }
+        for (Covid covid: covidCountryStatistic){
+            if(covid.getCountry().equals(country)){ return covid; }
         }
         return null;
     }
@@ -36,21 +36,21 @@ public class CovidService {
     @WebMethod
     public int TotalConfirmed(){
         int result = 0;
-        for (Covid cov: covidCountryStatistic){result += cov.getConfirmed();}
+        for (Covid covid: covidCountryStatistic){result += covid.getConfirmed();}
         return result;
     }
 
     @WebMethod
     public int TotalDeathget(){
         int result = 0;
-        for (Covid cov: covidCountryStatistic){result += cov.getDeath(); }
+        for (Covid covid: covidCountryStatistic){result += covid.getDeath(); }
         return result;
     }
 
     @WebMethod
     public int TotalRecoveryget(){
         int result = 0;
-        for (Covid cov: covidCountryStatistic){result += cov.getRecovered(); }
+        for (Covid covid: covidCountryStatistic){result += covid.getRecovered(); }
         return result;
     }
 
