@@ -24,16 +24,20 @@ public class ChatBotService {
                 result = time.format(nowTime);
                 break;
             case "USD":
-                result= SoapClient.SoapConnect("USD");
+                result= SoapClient.SoapConnect("USD") +  SoapClient.SoapConnectDesc("USD") +
+                        SoapClient.GetCurrencyChange("USD");
                 break;
             case "EUR":
-                result= SoapClient.SoapConnect("EUR");
+                result= SoapClient.SoapConnect("EUR") +  SoapClient.SoapConnectDesc("EUR") +
+                        SoapClient.GetCurrencyChange("EUR");
                 break;
-            case "JPY":
-                result= SoapClient.SoapConnect("JPY");
+            case "RUB":
+                result= SoapClient.SoapConnect("RUB") +  SoapClient.SoapConnectDesc("RUB") +
+                        SoapClient.GetCurrencyChange("RUB");
                 break;
             default:
                 result = "ამ კითხვაზე პასუხი არ მაქვს";
+                break;
         }
 
         return result;
