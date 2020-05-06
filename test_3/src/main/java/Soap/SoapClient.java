@@ -20,4 +20,8 @@ public class SoapClient {
         NBGCurrencyServiceLocator locator = new NBGCurrencyServiceLocator();
         return locator.getNBGCurrencyPort().getCurrencyChange(currency);
     }
+    public static String GetDate(String currency) throws ServiceException, RemoteException {
+        NBGCurrencyServiceLocator locator = new NBGCurrencyServiceLocator();
+        return locator.getNBGCurrencyPort().getDate(currency);
+    }
 }

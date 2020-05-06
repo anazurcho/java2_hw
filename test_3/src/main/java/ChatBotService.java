@@ -24,16 +24,22 @@ public class ChatBotService {
                 result = time.format(nowTime);
                 break;
             case "USD":
-                result= SoapClient.SoapConnect("USD") +  SoapClient.SoapConnectDesc("USD") +
-                        SoapClient.GetCurrencyChange("USD");
+                result= "\nCurrency USD - " + SoapClient.SoapConnect("USD")
+                        + "\nDescription " + SoapClient.SoapConnectDesc("USD")
+                        + "\nChange " + SoapClient.GetCurrencyChange("USD")
+                        + "\nTime: " + SoapClient.GetDate("USD");
                 break;
             case "EUR":
-                result= SoapClient.SoapConnect("EUR") +  SoapClient.SoapConnectDesc("EUR") +
-                        SoapClient.GetCurrencyChange("EUR");
+                result= "\nCurrency EUR - " + SoapClient.SoapConnect("EUR")
+                        + "\nDescription " + SoapClient.SoapConnectDesc("EUR")
+                        + "\nChange " + SoapClient.GetCurrencyChange("EUR")
+                        + "\nTime: " + SoapClient.GetDate("EUR");
                 break;
             case "RUB":
-                result= SoapClient.SoapConnect("RUB") +  SoapClient.SoapConnectDesc("RUB") +
-                        SoapClient.GetCurrencyChange("RUB");
+                result= "\nCurrency RUB - " + SoapClient.SoapConnect("RUB")
+                        + "\nDescription " + SoapClient.SoapConnectDesc("RUB")
+                        + "\nChange " + SoapClient.GetCurrencyChange("RUB")
+                        + "\nTime: " + SoapClient.GetDate("RUB");
                 break;
             default:
                 result = "ამ კითხვაზე პასუხი არ მაქვს";

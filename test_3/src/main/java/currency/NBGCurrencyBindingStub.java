@@ -222,7 +222,7 @@ public class NBGCurrencyBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public int getCurrencyRate(java.lang.String code) throws java.rmi.RemoteException {
+    public int getCurrencyRate(int code) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -253,7 +253,7 @@ public class NBGCurrencyBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public java.lang.String getDate() throws java.rmi.RemoteException {
+    public java.lang.String getDate(String currency) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
