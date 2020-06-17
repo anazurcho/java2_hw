@@ -13,7 +13,7 @@ public class PrintAnnotationAspect {
 
     @Before("@annotation(ana.zurabashvili.davaleba4.aspect.Println)")
     public void multiplication(JoinPoint joinPoint){
-        System.out.println("Executing multiplication!!");
-        System.out.println("Before running loggingAdvice on method="+ Arrays.toString(joinPoint.getArgs()));
+        System.out.println("PrintAnnotationAspect მოვდივარ");
+        System.out.println("გადაცემული არგუმენტები="+ Arrays.toString(joinPoint.getArgs()));
     }
 }

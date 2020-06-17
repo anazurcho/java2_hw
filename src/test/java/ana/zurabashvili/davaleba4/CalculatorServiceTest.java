@@ -18,7 +18,7 @@ public class CalculatorServiceTest {
         int realresult = calculatorService.multiplication(10,2);
 
         assertEquals(result, realresult);
-        System.out.println("result expected" + result);
-        System.out.println("result for real" + realresult);
+        System.out.println("result expected " + result);
+        System.out.println("result for real " + realresult);
     }
 }
